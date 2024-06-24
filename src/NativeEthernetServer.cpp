@@ -106,7 +106,7 @@ EthernetClient EthernetServer::available()
 
 			   if(fnet_socket_poll(&socket_poll, 1))
 			   {
-				   if(socket_poll.events_occurred & FNET_SOCKET_EVENT_OUT || socket_poll.events_occurred & FNET_SOCKET_EVENT_IN) /* Connection successful */
+				   if(socket_poll.events_occurred & FNET_SOCKET_EVENT_OUT || socket_poll.events_occurred & bool(FNET_SOCKET_EVENT_IN)) /* Connection successful */
 				   {
              if(socket_poll.events_occurred & FNET_SOCKET_EVENT_ERR) /* Connection failed */
              {
@@ -116,7 +116,7 @@ EthernetClient EthernetServer::available()
                Serial.send_now();
   //             break;
              }
-					   if(socket_poll.events_occurred & (FNET_SOCKET_EVENT_OUT || FNET_SOCKET_EVENT_IN)) {
+					   if(socket_poll.events_occurred & (FNET_SOCKET_EVENT_OUT || bool(FNET_SOCKET_EVENT_IN))) {
 //						   Serial.println("Socket Event Both");
 //						   break;
              }

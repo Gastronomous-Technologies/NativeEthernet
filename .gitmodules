@@ -1,0 +1,3 @@
+[submodule "FNET"]
+	path = FNET
+	url = git@github.com:Gastronomous-Technologies/FNET.git
