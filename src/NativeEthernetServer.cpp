@@ -116,16 +116,6 @@ EthernetClient EthernetServer::available()
                Serial.send_now();
   //             break;
              }
-					   if(socket_poll.events_occurred & (FNET_SOCKET_EVENT_OUT || bool(FNET_SOCKET_EVENT_IN))) {
-//						   Serial.println("Socket Event Both");
-//						   break;
-             }
-             else if(socket_poll.events_occurred & FNET_SOCKET_EVENT_OUT){
-//               Serial.println("Socket Event Out");
-             }
-             else {
-//               Serial.println("Socket Event IN");
-             }
               
            }
          }
